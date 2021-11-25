@@ -6,7 +6,7 @@
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:44:04 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/11/23 10:44:07 by nbonafe-         ###   ########.fr       */
+/*   Updated: 2021/11/25 18:38:33 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,4 @@ int	ft_atoi(char *str)
 		a++;
 	}
 	return (s * i);
-}
-
-int	main(void)
-{
-	printf("%d\n", ft_atoi("-88455"));
 }
