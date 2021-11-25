@@ -6,9 +6,17 @@
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:09:54 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/11/15 16:10:53 by nbonafe-         ###   ########.fr       */
+/*   Updated: 2021/11/25 19:09:52 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != '\0' && *s != c)
+		s++;
+	if (c == *s)
+		return ((char *)s);
+	return (0);
+}
