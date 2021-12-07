@@ -6,10 +6,13 @@
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:55:43 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/11/23 16:59:27 by nbonafe-         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:48:23 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
+}

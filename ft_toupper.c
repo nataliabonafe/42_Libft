@@ -6,13 +6,13 @@
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:12:43 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/11/18 20:33:55 by nbonafe-         ###   ########.fr       */
+/*   Updated: 2021/12/07 18:12:57 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;

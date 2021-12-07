@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 16:12:13 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/12/07 15:53:09 by nbonafe-         ###   ########.fr       */
+/*   Created: 2021/12/07 18:28:54 by nbonafe-          #+#    #+#             */
+/*   Updated: 2021/12/07 18:29:20 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t counter)
 {
-	size_t	i;
-	size_t	j;
+	size_t				i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 
-	if (!(*needle))
-		return ((char *)haystack);
 	i = 0;
-	while (haystack[i] && i < len)
+	if (s1 == s2 || counter == 0)
+		return (0);
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;
+	while (counter)
 	{
-		j = 0;
-		while (needle[j] && haystack[i + j] && haystack[i + j] == needle[j]
-			&& (i + j) < len)
-			j++;
-		if (!(needle[j]))
-			return (&((char *)haystack)[i]);
-		i++;
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		if (counter)
+			i++;
+		counter--;
 	}
-	return (NULL);
+	return (0);
 }

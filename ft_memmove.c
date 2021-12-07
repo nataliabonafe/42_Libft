@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 16:12:13 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/12/07 15:53:09 by nbonafe-         ###   ########.fr       */
+/*   Created: 2021/12/07 18:30:41 by nbonafe-          #+#    #+#             */
+/*   Updated: 2021/12/07 18:30:58 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t counter)
 {
-	size_t	i;
-	size_t	j;
+	size_t			i;
+	unsigned char	*strdest;
+	unsigned char	*strsrc;
 
-	if (!(*needle))
-		return ((char *)haystack);
+	strdest = (unsigned char *)dest;
+	strsrc = (unsigned char *)src;
 	i = 0;
-	while (haystack[i] && i < len)
+	if (!strdest && !strsrc)
+		return (NULL);
+	if (strdest > strsrc)
 	{
-		j = 0;
-		while (needle[j] && haystack[i + j] && haystack[i + j] == needle[j]
-			&& (i + j) < len)
-			j++;
-		if (!(needle[j]))
-			return (&((char *)haystack)[i]);
-		i++;
+		counter++;
+		while (--counter > 0)
+			(strdest)[counter - 1] = (strsrc)[counter - 1];
 	}
-	return (NULL);
+	else
+	{
+		while (i < counter)
+		{
+			(strdest)[i] = (strsrc)[i];
+			i++;
+		}
+	}
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:28:12 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/11/23 10:45:43 by nbonafe-         ###   ########.fr       */
+/*   Updated: 2021/12/07 18:24:13 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ size_t	count(int n)
 		len++;
 	while (n)
 	{
-		n /= 10;
 		len++;
+		n /= 10;
 	}
 	return (len);
 }
@@ -31,26 +31,25 @@ char	*ft_itoa(int n)
 {
 	char	*num;
 	size_t	len;
+	long	nb;
 
 	len = count(n);
-	num = (char *)malloc(sizeof(*num) * (len + 1));
+	nb = n;
+	num = (char *)malloc(sizeof(char) * (len + 1));
 	if (!num)
 		return (NULL);
-	if (n < 0)
+	if (nb < 0)
 	{
 		num[0] = '-';
-		n = -n;
+		nb = -nb;
 	}
+	if (nb == 0)
+		num[0] = '0';
 	num[len--] = '\0';
-	while (n)
+	while (nb)
 	{
-		num[len--] = n % 10 + 48;
-		n /= 10;
+		num[len--] = nb % 10 + 48;
+		nb /= 10;
 	}
 	return (num);
-}
-
-int	main(void)
-{
-	printf("%s\n", ft_itoa(-85851455));
 }

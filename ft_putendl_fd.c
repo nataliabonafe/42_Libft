@@ -6,10 +6,14 @@
 /*   By: nbonafe- <nbonafe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:55:47 by nbonafe-          #+#    #+#             */
-/*   Updated: 2021/11/23 17:09:53 by nbonafe-         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:48:45 by nbonafe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}
